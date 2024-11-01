@@ -1,0 +1,245 @@
+.toast-mm-body{display:table;width:100%;table-layout:fixed;}
+.toast-mm-body > div{display:table-cell;vertical-align:top;}
+.toast-mm-body p, .toast-mm-body h3{margin-top:0;}
+
+/*Header*/
+.toast-mm-header{
+    width:250px;
+    color:#000000;
+    display:table-cell;
+    vertical-align:top;
+}
+
+.toast-mm-admin-header-logo{
+    padding:30px 10px;
+    border-bottom:1px solid #E0E4E9;
+    display:block;
+    outline:none;
+}
+
+.toast-mm-tab{
+    padding:20px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#f0f0f1;
+    border-bottom:1px solid #E0E4E9;
+    border-left:2px solid transparent;
+    margin-right:-1px;
+    position:relative;
+    cursor:pointer;
+}
+
+.toast-mm-tab-area h2{
+    font-size:30px;
+}
+
+.toast-mm-tab h4{
+    text-transform:uppercase;
+    font-size:13px;
+    margin:0;
+    color:#000000;
+    font-weight:bold;
+}
+
+.toast-mm-tab p{
+    margin:0;
+    font-weight:lighter;
+    color:#72777C;
+}
+
+.toast-mm-tab:last-child{
+    border-bottom:none;
+}
+
+.toast-mm-tab .icon{
+    position:absolute;
+    right:1rem;
+    top:50%;
+    transform:translateY(-50%);
+    width:35px;
+    height:35px;
+    opacity:0.5;
+    border-radius:4px;
+    padding:3px;
+    box-sizing:border-box;
+}
+
+.toast-mm-tab.active, .toast-mm-tab:hover{
+    border-left:2px solid #ff8f2b;
+    color:#000000;
+    background:#ffffff;
+    z-index:1;
+    position: relative;
+}
+
+.toast-mm-tab.active .icon, .toast-mm-tab:hover .icon{
+    opacity:1;
+    background:rgba(0, 0, 0, 0.05);
+}
+
+.toast-mm-tab.active .cog, .toast-mm-tab:hover .cog{
+    animation:cog 2s linear infinite;
+}
+
+.toast-mm-tab .cog1{
+    position:absolute;
+    top:3px;
+    left:3px;
+    width:60%;
+}
+
+.toast-mm-tab .cog2{
+    position:absolute;
+    bottom:3px;
+    right:3px;
+    width:40%;
+    animation-direction: reverse !important;
+}
+
+@keyframes cog{
+    0%{transform:rotate(0);}
+    100%{transform:rotate(360deg);}
+}
+
+.toast-mm-tab .display-screen{opacity:0;transition:all .25s;}
+.toast-mm-tab:hover .display-screen, .toast-mm-tab.active .display-screen{opacity:1;}
+
+.toast-mm-tab .brush{width:30px;position:absolute;top:50%;left:45%;transform:translate(-50%, -50%);}
+.toast-mm-tab.active .brush, .toast-mm-tab:hover .brush{animation:brush .7s cubic-bezier(0, 0, 0.01, 1.05) infinite;transform-origin:top;}
+.toast-mm-tab.active .brush-end, .toast-mm-tab:hover .brush-end{fill:#ff8f2b;}
+
+@keyframes brush{
+    0%{transform:rotate(0deg) translate(-50%, -50%);}
+    50%{transform:rotate(90deg) translate(0%, -5%);}
+    100%{transform:rotate(0deg) translate(-50%, -50%);}
+}
+
+/*
+ * Toast MM options area styling
+ */
+ .toast-mm-tab-areas{
+     background:#ffffff;
+     border-left:1px solid #efefef
+}
+
+.toast-mm-tab-area{
+    padding:20px;
+    display:none;
+}
+
+.toast-mm-tab-area.active{
+    padding:20px;
+    display:block;
+}
+
+.toast-mm-options-area{
+    position:relative;
+    padding:20px;
+    background:#F9FAFB;
+    border:1px solid #E0E4E9;
+    border-radius:4px;
+    color:#000000;
+    margin-bottom:20px;
+}
+
+.toast-mm-options-area:last-child{
+    margin-bottom:0;
+}
+
+.toast-mm-options-area:after{
+    content: 'Options updated Successfully';
+    background: #00A66B;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    transform: translatey(-50%);
+    padding: 2px 7px;
+    color: #ffffff;
+    font-size: 11px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s;
+}
+.toast-mm-options-area.success:after{
+    opacity:1;
+}
+.option-section-title{border-bottom:1px solid #efefef;padding:10px 0;color:#ff8f2b}
+
+.toast-mm-options-area .option:first-child{padding-top:0;}
+.toast-mm-options-area .option{border-bottom:1px solid #efefef;padding:20px 0;}
+.toast-mm-options-area .option:last-child{padding-bottom:0;border-bottom:none;}
+
+.toast-mm-options-area .option p, .toast-mm-options-area .option input[type="checkbox"] + label{margin:0;color:#666666}
+.toast-mm-options-area .option p a{color:#ff8f2b;text-decoration:none;font-weight:bold;}
+.toast-mm-options-area .option select, .toast-mm-options-area .option input[type="text"], .toast-mm-options-area .option input[type="number"]{
+    border:2px solid #000000;
+    color:#000000;
+    font-weight:bold;
+    outline:none;
+    box-shadow:none;
+    background:transparent;
+    margin-top:10px;
+    width:100%;max-width:300px;
+}
+
+.toast-mm-options-area .option input[type="checkbox"]{
+    border:2px solid #000000;
+    width:25px;
+    height:25px;
+    box-sizing:border-box;
+    display:inline-block;
+    outline:none;
+    box-shadow:none;
+}
+.toast-mm-options-area .option input[type=checkbox]:checked::before{
+    width:26px;
+    height:26px;
+}
+
+.toast-mm-options-area .option input[type="checkbox"] + label{
+    display:inline-block;
+    width:calc(100% - 38px);
+
+}
+
+.toast-mm-options-area .option .wp-picker-container{
+    margin-top:10px;
+}
+
+.toast-mm-options-area .option.pro-option h3:after{
+    content:'PRO';
+    color:#2b59ff;
+    text-transform:uppercase;
+    margin-left:5px;
+}
+
+.toast-mm-buttons{text-align:right;}
+
+.toast-mm-pro-upgrade, .toast-mm-pro-upgrade:hover, .toast-mm-pro-upgrade:active, .toast-mm-pro-upgrade:focus{
+    background:#2b59ff;
+    color:#ffffff;
+    text-decoration:none;
+    padding:7px 15px;
+    text-transform:uppercase;
+    border-radius:4px;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:10px;
+    box-shadow:none;
+    outline:none;
+    margin-bottom:10px;
+}
+
+.toast-mm-options-area .pro-option select, .toast-mm-options-area .pro-option input, .toast-mm-options-area .pro-option label{opacity:0.5;pointer-events:none;display:block;}
+.toast-mm-options-area input[type="button"]{display:inline-block;}
+
+.toast-mm-options-area .row{display:table;width:100%;table-layout:fixed;}
+.toast-mm-options-area .option.half{width:50%;display:table-cell;vertical-align:top;border-bottom:1px solid #efefef;padding:20px 0;}
+.toast-mm-options-area .option.half:nth-of-type(2){border-left:1px solid #efefef;padding-left:20px}
+
+.image-preview-wrapper{width:200px;margin-bottom:1rem;}
+.image-preview-wrapper.empty{height:0;}
+
+.wp-color-picker{margin-top:0 !important;}

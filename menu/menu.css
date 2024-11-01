@@ -1,0 +1,89 @@
+/*
+ *Generic Styling
+ */
+.toast-mm{font-size:14px;}
+.toast-mm.toast-mm-capitalize{text-transform:uppercase;}
+.toast-mm-banner, .toast-mm-menu, .toast-mm{display:none;}
+ 
+/*
+ * Menu bar styling
+ */ 
+.toast-mm-banner{
+    padding:10px;
+    line-height:1;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#000000;
+    z-index:99999;
+    cursor:pointer;
+    color:#ffffff;
+    box-sizing:border-box;
+}
+.toast-mm-banner__title{padding-left:10px;}
+
+.toast-mm-logo.left{margin-right:10px;}
+.toast-mm-logo.left img{height:28px;width:auto;}
+.toast-mm-logo.right{float:right;}
+.toast-mm-logo.right img{height:28px;width:auto;}
+
+.toast-mm-logo.menu-area{display:block;width:100%;max-width:200px;margin:20px auto;}
+
+/*
+ * Menu area styling
+ */
+.toast-mm-menu{position:fixed;left:0;top:0;height:100%;background:#000000;width:100%;max-width:500px;transform:translatex(-100%);transition:all .5s;z-index:99998;}
+.toast-mm-menu.right{left:auto;right:0;transform:translatex(100%);}
+.toast-mm-menu.top{left:0;top:0;transform:translate(0, -100%);}
+.toast-mm-menu.bottom{left:0;top:0;transform:translate(0, 100%);}
+.active .toast-mm-menu{transform:translateX(0);}
+
+.toast-mm-menu ul{margin:0;padding:0;}
+.toast-mm-menu li{list-style-type:none;margin:0;padding:0;display:block;}
+.toast-mm-menu li a{display:block;padding:15px 20px;position:relative;color:#ffffff;line-height:1;border-bottom:1px solid rgba(255, 255, 255, 0.15);}
+
+.toast-mm-open-submenu{position:absolute;right:0;top:50%;transform:translateY(-50%);padding:20px;line-height:0;}
+
+.toast-mm-overflow{overflow:scroll;max-height:100vh;-ms-overflow-style: none;scrollbar-width: none;}
+.toast-mm-overflow::-webkit-scrollbar{display:none;}
+
+/*
+ * Sub menu styling
+ */
+ .toast-mm-menu .sub-menu{height:0;overflow:hidden;transition:all .5s;}
+
+/*
+ * Open submenu chevron
+ */
+.toast-mm-chevron{
+    width: 0; 
+    height: 0; 
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid;
+    transition:all .5s;
+    opacity:0.8;
+}
+.active > a .toast-mm-chevron{transform:rotate(90deg);}
+ 
+/*
+ * Hamburger menu icon
+ */ 
+ .toast-mm-banner__hamburger, .toast-mm-banner__title{display:inline-block;vertical-align:middle;}
+ .toast-mm-banner__title{padding:0 10px;}
+ .toast-mm-banner__hamburger div{width:25px;height: 5px;margin-bottom: 6px;transition: 0.5s;border-radius:10px;background:#ffffff;}
+ .toast-mm-banner__hamburger div:last-child{margin-bottom:0;}
+ .active .toast-mm-banner__hamburger div:first-child{transform: rotate(-45deg) translate(-7px, 6px) ;}
+ .active .toast-mm-banner__hamburger div:nth-of-type(2){opacity:0;}
+ .active .toast-mm-banner__hamburger div:last-child{transform: rotate(45deg) translate(-9px, -8px) ;}
+ .toast-banner-banner-title-area{display:inline-block;}
+ .toast-banner-banner-title-area.right{float:right;}
+
+ /*Fix menu when admin is enabled.*/
+ .admin-bar .toast-mm-banner{top:32px;}
+ .admin-bar .toast-mm-menu{margin-top:32px;}
+ @media(max-width:782px){
+    .admin-bar .toast-mm-banner{top:46px;}
+    .admin-bar .toast-mm-menu{margin-top:46px;}
+    }
